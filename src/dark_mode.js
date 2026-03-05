@@ -1,27 +1,34 @@
-const toggle = document.getElementById("theme-toggle");
-const circle = document.getElementById("toggle-circle");
+const toggles = document.querySelectorAll(".theme-toggle");
 
 function updateToggle() {
-    if (document.documentElement.classList.contains("dark")) {
-        circle.style.transform = "translateX(24px)";
-        circle.textContent = "🌙";
-    } else {
-        circle.style.transform = "translateX(0px)";
-        circle.textContent = "☀️";
-    }
+    const isDark = document.documentElement.classList.contains("dark");
+
+    toggles.forEach(toggle => {
+        const circle = toggle.querySelector(".toggle-circle");
+
+        if (isDark) {
+            circle.style.transform = "translateX(24px)";
+            circle.textContent = "🌙";
+        } else {
+            circle.style.transform = "translateX(0px)";
+            circle.textContent = "☀️";
+        }
+    });
 }
 
-updateToggle();
+toggles.forEach(toggle => {
+    toggle.addEventListener("click", () => {
 
-toggle.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
 
-    document.documentElement.classList.toggle("dark");
+        if (document.documentElement.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
 
-    if (document.documentElement.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
-
-    updateToggle();
+        updateToggle();
+    });
 });
+
+updateToggle();

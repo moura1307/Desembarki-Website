@@ -73,14 +73,12 @@
                         </a>
                         <span class="text-white">+55 (11) 99999-9999</span>
                     </div>
-                    <button id="theme-toggle"
-                        class="relative w-14 h-8 flex items-center bg-gray-300 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300">
-
-                        <span id="toggle-circle"
-                            class="w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 flex items-center justify-center text-xs">
+                    <button
+                        class="theme-toggle md:hidden relative w-14 h-8 flex items-center bg-gray-300 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300">
+                        <span
+                            class="toggle-circle w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 flex items-center justify-center text-xs">
                             🌙
                         </span>
-
                     </button>
                 </nav>
             </div>
@@ -288,11 +286,12 @@
         <div class="text-black dark:text-white bg-mist-200 dark:bg-gray-900 p-6 text-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 justify-center">
-                    <div class="gap-2 text-color[#201E1E] dark:text-white font-bold text-2xl">
+                    <div
+                        class="flex flex-col justify-center items-center gap-2 text-color[#201E1E] dark:text-white font-bold text-2xl">
                         <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
                             style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
                             viewBox="0 0 13804.32 3160.82" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xodm="http://www.corel.com/coreldraw/odm/2003" class="w-auto h-16 mb-5 mt-10">
+                            xmlns:xodm="http://www.corel.com/coreldraw/odm/2003" class="w-auto h-16">
                             <defs>
                                 <style type="text/css">
                                     .fil0 {
@@ -337,6 +336,15 @@
                                 </g>
                             </g>
                         </svg>
+
+                        <button
+                            class="theme-toggle md:hidden relative w-14 h-8 flex items-center bg-gray-300 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300 mt-6">
+                            <span
+                                class="toggle-circle w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 flex items-center justify-center text-xs">
+                                🌙
+                            </span>
+                        </button>
+
                         <nav class="hidden md:flex justify-center gap-5 text-black dark:text-white">
                             <a class="cursor-pointer hover:text-blue-600"><svg xmlns="http://www.w3.org/2000/svg"
                                     width="16" height="16" fill="currentColor" class="bi bi-facebook"
@@ -390,6 +398,7 @@
                             <li><a href="#" class="hover:text-blue-600">Fale Conosco</a></li>
                         </ul>
                     </div>
+
                 </div>
             </div>
         </div>
