@@ -29,3 +29,7 @@ h1 {
 #counter {
   background-color: #1B1D1E;
 }
+
+img {
+    user-select: none;
+}
