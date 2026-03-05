@@ -1,11 +1,12 @@
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,html}"],
   theme: {
     extend: {
-        fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
-        },
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+      },
     },
-},
+  },
   plugins: [],
-}
+};

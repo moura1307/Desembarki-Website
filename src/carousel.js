@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   // Auto Slide
-  let autoSlide = setInterval(nextSlide, 3000);
+  let autoSlide = setInterval(nextSlide, 5000);
 
   // Reset position on resize
   window.addEventListener("resize", () => {

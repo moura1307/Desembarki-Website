@@ -2,14 +2,33 @@
 <html lang="pt-br">
 
 <head>
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem("theme");
+
+            if (savedTheme === "dark") {
+                document.documentElement.classList.add("dark");
+            }
+            else if (savedTheme === "light") {
+                document.documentElement.classList.remove("dark");
+            }
+            else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+                document.documentElement.classList.add("light");
+            }
+        })();
+    </script>
+
     <link rel="stylesheet" href="src/style.css">
+    <script type="module" src="/src/dark_mode.js"></script>
     <script type="module" src="/src/carousel.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desembarki Webgráfica</title>
+    <link rel="icon" type="image/x-icon" href="src/assets/logo.svg">
 </head>
 
-<body>
+<body class="bg-white dark:bg-gray-800 transition-colors duration-500">
     <header class="bg-transparent h-150 md:h-175 bg-cover bg-center"
         style="background-image: url('/src/assets/bg.png');">
 
@@ -17,8 +36,8 @@
         <div class="bg-gray-800/50 py-4 hidden md:flex w-full">
             <div class="container mx-auto items-center justify-between md:flex">
                 <nav class="flex items-center justify-between gap-5 text-white">
-                    <a class="cursor-pointer hover:text-blue-500"><svg xmlns="http://www.w3.org/2000/svg"
-                            width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                    <a class="cursor-pointer hover:text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
                             <path
                                 d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
                         </svg></a>
@@ -55,21 +74,28 @@
                         </a>
                         <span class="text-white">+55 (11) 99999-9999</span>
                     </div>
+                    <button id="theme-toggle"
+                        class="relative w-14 h-8 flex items-center bg-gray-300 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300">
+
+                        <span id="toggle-circle"
+                            class="w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 flex items-center justify-center text-xs">
+                            🌙
+                        </span>
+
+                    </button>
                 </nav>
             </div>
         </div>
-
         <!-- Header -->
         <div class="container h-150 md:h-156 w-full mx-auto relative">
             <!-- h = altura do header - altura da topbar ( /!\ DESCONTE O PY /!\ ) -->
             <nav class="p-4 relative md:bg-transparent bg-gray-800/50">
                 <div class="container mx-auto flex items-center justify-between text-lg">
                     <a href="index.html" class="text-white text-lg font-bold">
-
                         <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
                             style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
                             viewBox="0 0 13804.32 3160.82" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:xodm="http://www.corel.com/coreldraw/odm/2003" class=" w-auto h-12 md:h-15">
+                            xmlns:xodm="http://www.corel.com/coreldraw/odm/2003" class="w-auto h-16">
                             <defs>
                                 <style type="text/css">
                                     .fil0 {
@@ -89,7 +115,7 @@
                                     }
 
                                     .fil4 {
-                                        fill: #FFFFFF;
+                                        fill: currentColor;
                                         fill-rule: nonzero
                                     }
                                 </style>
@@ -118,12 +144,12 @@
 
                     <!-- Menu para Desktop -->
                     <div class="hidden md:flex text-white gap-5 absolute left-1/2 -translate-x-1/2">
-                        <a href="index.html" class="hover:text-blue-500 px-3 py-2">Home</a>
-                        <a href="sobre.html" class="hover:text-blue-500 px-3 py-2">Sobre</a>
-                        <a href="servicos.html" class="hover:text-blue-500 px-3 py-2">Serviços</a>
+                        <a href="index.html" class="hover:text-blue-600 px-3 py-2">Home</a>
+                        <a href="sobre.html" class="hover:text-blue-600 px-3 py-2">Sobre</a>
+                        <a href="servicos.html" class="hover:text-blue-600 px-3 py-2">Serviços</a>
                     </div>
                     <button href="#"
-                        class="hidden md:flex cursor-pointer border-2 border-blue-500 bg-blue-500 rounded-md px-3 py-2 text-white hover:border-2 hover:border-blue-400 hover:bg-transparent transition duration-500">Fale
+                        class="hidden md:flex cursor-pointer border-2 border-blue-600 bg-blue-600 rounded-md px-3 py-2 text-white hover:border-2 hover:border-blue-600 hover:bg-transparent transition duration-500">Fale
                         Conosco!</button>
 
                     <!-- Botão do Menu para Mobile -->
@@ -145,11 +171,12 @@
                     <!-- Menu para Mobile -->
                     <div id="mobile-menu"
                         class="md:hidden absolute top-full left-0 w-full z-50 opacity-0 -translate-y-4 pointer-events-none transition-all duration-300 ease-in-out p-3">
-                        <div class="flex flex-col gap-2 text-white bg-blue-500 p-2 rounded-sm shadow-lg">
+                        <div class="flex flex-col gap-2 text-white bg-blue-600 p-2 rounded-sm shadow-lg">
                             <a href="index.html" class="block px-3 py-2 rounded-md">Home</a>
                             <a href="sobre.html" class="block px-3 py-2 rounded-md">Sobre</a>
                             <a href="servicos.html" class="block px-3 py-2 rounded-md">Serviços</a>
-                            <a href="contato.html" class="block px-3 py-2 rounded-md text-white border border-white">Fale
+                            <a href="contato.html"
+                                class="block px-3 py-2 rounded-md text-white border border-white">Fale
                                 Conosco</a>
                         </div>
                     </div>
@@ -159,11 +186,11 @@
             <!-- Conteúdo Imagem -->
             <div class="container mx-auto text-center mt-40">
                 <p class="text-white font-bold text-2xl px-1 md:text-5xl">Bem-vindo à Desembarki Webgráfica!</p>
-                <p class="text-gray-300 mt-4 text-sm px-5 md:text-lg">Transformamos suas ideias em realidade com
+                <p class="text-gray-300/80 mt-4 text-sm px-5 md:text-lg">Transformamos suas ideias em realidade com
                     design gráfico de alta qualidade.</p>
                 <a href="servicos.html"><button
-                    class="mt-6 px-5 py-3 cursor-pointer border-2 border-blue-500 bg-blue-500 rounded-md text-white hover:border-2 hover:border-blue-400 hover:bg-transparent transition duration-500">Saiba
-                    Mais</button></a>
+                        class="mt-6 px-5 py-3 cursor-pointer border-2 border-blue-600 bg-blue-600 rounded-md text-white hover:border-2 hover:border-blue-600 hover:bg-transparent transition duration-500">Saiba
+                        Mais</button></a>
             </div>
         </div>
     </header>
@@ -173,20 +200,20 @@
         <div class="container mx-auto md:p-0 p-3">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center justify-center items-stretch">
                 <div
-                    class="border border-blue-500 rounded-lg p-6 md:mt-7
-                flex flex-col justify-center items-center text-center md:h-10/12 hover:bg-blue-500/90 transition duration-300">
+                    class="border border-blue-600 rounded-lg p-6 md:mt-7
+                flex flex-col justify-center items-center text-center md:h-10/12 hover:bg-blue-600/90 transition duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-500 mx-auto mb-4" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path
                             d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z" />
                     </svg>
-                    <h3 class="text-xl font-bold mb-2">Entrega Rápida e Segura</h3>
-                    <p class="text-gray-300/80">Criação de logotipos, identidade visual, materiais de marketing e muito
+                    <h3 class="text-xl font-bold dark:text-white mb-2">Entrega Rápida e Segura</h3>
+                    <p class="text-gray-700/80 dark:text-gray-300/80">Criação de logotipos, identidade visual, materiais de marketing e muito
                         mais.</p>
                 </div>
                 <div
-                    class="border border-blue-500 rounded-lg p-6 
-                flex flex-col justify-center items-center text-center md:h-96 hover:bg-blue-500 transition duration-300">
+                    class="border border-blue-600 rounded-lg p-6 
+                flex flex-col justify-center items-center text-center md:h-96 hover:bg-blue-600 transition duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-500 mx-auto" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path
@@ -194,40 +221,40 @@
                         <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z" />
 
                     </svg>
-                    <h3 class="text-xl font-bold mb-2">Qualidade e Excelência</h3>
-                    <p class="text-gray-300/80">Desenvolvimento de sites responsivos, modernos e otimizados para SEO.
+                    <h3 class="text-xl font-bold dark:text-white mb-2">Qualidade e Excelência</h3>
+                    <p class="text-gray-700/80 dark:text-gray-300/80">Desenvolvimento de sites responsivos, modernos e otimizados para SEO.
                     </p>
                 </div>
                 <div
-                    class="border border-blue-500 rounded-lg p-6 md:mt-7
-                flex flex-col justify-center items-center text-center md:h-10/12 hover:bg-blue-500/90 transition duration-300">
+                    class="border border-blue-600 rounded-lg p-6 md:mt-7
+                flex flex-col justify-center items-center text-center md:h-10/12 hover:bg-blue-600/90 transition duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-500 mx-auto mb-4" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path
                             d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
                     </svg>
-                    <h3 class="text-xl font-bold mb-2">Atendimento Personalizado</h3>
-                    <p class="text-gray-300/80">Gerenciamento de redes sociais, criação de conteúdo e estratégias de
+                    <h3 class="text-xl font-bold dark:text-white mb-2">Atendimento Personalizado</h3>
+                    <p class="text-gray-700/80 dark:text-gray-300/80">Gerenciamento de redes sociais, criação de conteúdo e estratégias de
                         engajamento.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="w-full h-110 md:h-80 center flex items-center justify-center bg-mist-900">
+    <div class="w-full h-110 md:h-80 center flex items-center justify-center bg-mist-200 dark:bg-gray-900">
         <div class="container mx-auto md:p-0 p-3">
             <div class="grid grid-cols-1 md:grid-cols-3">
                 <div class="flex flex-col items-center text-center py-5">
-                    <h3 class="text-4xl font-bold text-blue-500">500+</h3>
-                    <p class="text-gray-300/80">Clientes Satisfeitos</p>
+                    <h3 class="text-4xl font-bold text-blue-600">500+</h3>
+                    <p class="text-gray-700/80 dark:text-gray-300/80">Clientes Satisfeitos</p>
                 </div>
                 <div class="flex flex-col items-center text-center py-5">
-                    <h3 class="text-4xl font-bold text-blue-500">1200+</h3>
-                    <p class="text-gray-300/80">Projetos Concluídos</p>
+                    <h3 class="text-4xl font-bold text-blue-600">1200+</h3>
+                    <p class="text-gray-700/80 dark:text-gray-300/80">Projetos Concluídos</p>
                 </div>
                 <div class="flex flex-col items-center text-center py-5">
-                    <h3 class="text-4xl font-bold text-blue-500">13</h3>
-                    <p class="text-gray-300/80">Anos de Experiência</p>
+                    <h3 class="text-4xl font-bold text-blue-600">13</h3>
+                    <p class="text-gray-700/80 dark:text-gray-300/80">Anos de Experiência</p>
                 </div>
             </div>
         </div>
@@ -236,7 +263,7 @@
     <div id="carousel" class="w-full">
         <section class="max-w-7xl mx-auto py-16">
 
-            <h2 class="text-3xl font-bold text-center mb-10">Conheça Nossos Parceiros</h2>
+            <h2 class="text-3xl font-bold dark:text-white text-center mb-10">Conheça Nossos Parceiros</h2>
 
             <div class="relative">
 
@@ -284,8 +311,8 @@
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center justify-center">
-                <div class="border border-blue-500 rounded-lg p-6
-                flex flex-col justify-center items-center text-center hover:bg-blue-500/90 transition duration-300">
+                <div class="border border-blue-600 rounded-lg p-6
+                flex flex-col justify-center items-center text-center hover:bg-blue-600/90 transition duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-500 mx-auto mb-4" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
@@ -293,24 +320,24 @@
                             d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1" />
 
                     </svg>
-                    <h3 class="text-xl font-bold mb-2">Impressões de Alta Qualidade</h3>
+                    <h3 class="text-xl font-bold text-white mb-2">Impressões de Alta Qualidade</h3>
                     <p class="text-gray-300/80">Criação de logotipos, identidade visual, materiais de marketing e muito
                         mais.</p>
                 </div>
-                <div class="border border-blue-500 rounded-lg p-6 
-                flex flex-col justify-center items-center text-center hover:bg-blue-500 transition duration-300">
+                <div class="border border-blue-600 rounded-lg p-6 
+                flex flex-col justify-center items-center text-center hover:bg-blue-600 transition duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-500 mx-auto" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path
                             d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.1 6.1 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.1 8.1 0 0 1-3.078.132 4 4 0 0 1-.562-.135 1.4 1.4 0 0 1-.466-.247.7.7 0 0 1-.204-.288.62.62 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896q.19.012.348.048c.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04M4.705 11.912a1.2 1.2 0 0 0-.419-.1c-.246-.013-.573.05-.879.479-.197.275-.355.532-.5.777l-.105.177c-.106.181-.213.362-.32.528a3.4 3.4 0 0 1-.76.861c.69.112 1.736.111 2.657-.12.559-.139.843-.569.993-1.06a3 3 0 0 0 .126-.75zm1.44.026c.12-.04.277-.1.458-.183a5.1 5.1 0 0 0 1.535-1.1c1.9-1.996 4.412-5.57 6.052-8.631-2.59 1.927-5.566 4.66-7.302 6.792-.442.543-.795 1.243-1.042 1.826-.121.288-.214.54-.275.72v.001l.575.575zm-4.973 3.04.007-.005zm3.582-3.043.002.001h-.002z" />
 
                     </svg>
-                    <h3 class="text-xl font-bold mb-2">Arte Digital</h3>
+                    <h3 class="text-xl font-bold text-white mb-2">Arte Digital</h3>
                     <p class="text-gray-300/80">Desenvolvimento de sites responsivos, modernos e otimizados para SEO.
                     </p>
                 </div>
-                <div class="border border-blue-500 rounded-lg p-6 
-                flex flex-col justify-center items-center text-center hover:bg-blue-500/90 transition duration-300">
+                <div class="border border-blue-600 rounded-lg p-6 
+                flex flex-col justify-center items-center text-center hover:bg-blue-600/90 transition duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-500 mx-auto mb-4" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path
@@ -318,7 +345,7 @@
                         <path
                             d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8m0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5" />
                     </svg>
-                    <h3 class="text-xl font-bold mb-2">Cartões de Visita</h3>
+                    <h3 class="text-xl font-bold text-white mb-2">Cartões de Visita</h3>
                     <p class="text-gray-300/80">Gerenciamento de redes sociais, criação de conteúdo e estratégias de
                         engajamento.</p>
                 </div>
@@ -328,13 +355,13 @@
         </div>
     </div>
 
-    <div id="fale conosco" class="bg-blue-500/90">
+    <div id="fale conosco" class="bg-blue-600/90">
         <div class="container mx-auto py-10 md:py-40 text-center px-5">
             <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Pronto para transformar sua marca?</h2>
             <p class="text-gray-300/80 text-md md:text-lg mb-6">Entre em contato conosco hoje mesmo e descubra como
                 podemos ajudar a levar seu negócio para o próximo nível!</p>
             <button
-                class="px-5 py-3 cursor-pointer border-2 border-white bg-blue-500/90 rounded-md text-white hover:bg-white hover:text-blue-500 transition duration-500">Fale
+                class="px-5 py-3 cursor-pointer border-2 border-white bg-blue-600/90 rounded-md text-white hover:bg-white hover:text-blue-600 transition duration-500">Fale
                 Conosco!</button>
         </div>
     </div>
@@ -346,10 +373,10 @@
             </p>
         </div> -->
 
-        <div class="text-white bg-[#242424]">
+        <div class="text-black dark:text-white bg-mist-200 dark:bg-gray-900 p-6 text-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 justify-center">
-                    <div class="gap-2 text-white font-bold text-2xl">
+                    <div class="gap-2 text-color[#201E1E] dark:text-white font-bold text-2xl">
                         <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
                             style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
                             viewBox="0 0 13804.32 3160.82" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -373,7 +400,7 @@
                                     }
 
                                     .fil4 {
-                                        fill: #FFF;
+                                        fill: currentColor;
                                         fill-rule: nonzero
                                     }
                                 </style>
@@ -398,8 +425,8 @@
                                 </g>
                             </g>
                         </svg>
-                        <nav class="hidden md:flex justify-center gap-5 text-white">
-                            <a class="cursor-pointer hover:text-blue-500"><svg xmlns="http://www.w3.org/2000/svg"
+                        <nav class="hidden md:flex justify-center gap-5 text-black dark:text-white">
+                            <a class="cursor-pointer hover:text-blue-600"><svg xmlns="http://www.w3.org/2000/svg"
                                     width="16" height="16" fill="currentColor" class="bi bi-facebook"
                                     viewBox="0 0 16 16">
                                     <path
@@ -422,67 +449,68 @@
 
 
                     <div>
-                        <h4 class="text-blue-500 font-semibold mb-4">Resources</h4>
+                        <h4 class="text-blue-600 font-semibold mb-4">Recursos</h4>
                         <ul class="space-y-3 text-sm">
-                            <li><a href="index.html" class="hover:text-blue-500">Home</a></li>
-                            <li><a href="sobre.html" class="hover:text-blue-500">Sobre</a></li>
-                            <li><a href="servicos.html" class="hover:text-blue-500">Serviços</a></li>
-                            <li><a href="contato.html" class="hover:text-blue-500">Contato</a></li>
+                            <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
+                            <li><a href="sobre.html" class="hover:text-blue-600">Sobre</a></li>
+                            <li><a href="servicos.html" class="hover:text-blue-600">Serviços</a></li>
+                            <li><a href="contato.html" class="hover:text-blue-600">Contato</a></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 class="text-blue-500 font-semibold mb-4">Redes Sociais</h4>
+                        <h4 class="text-blue-600 font-semibold mb-4">Redes Sociais</h4>
                         <ul class="space-y-3 text-sm">
-                            <li><a href="#" class="hover:text-blue-500">Facebook</a></li>
-                            <li><a href="#" class="hover:text-blue-500">Instagram</a></li>
-                            <li><a href="#" class="hover:text-blue-500">Twitter</a></li>
-                            <li><a href="#" class="hover:text-blue-500">LinkedIn</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Facebook</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Instagram</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Twitter</a></li>
+                            <li><a href="#" class="hover:text-blue-600">LinkedIn</a></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 class="text-blue-500 font-semibold mb-4">Atendimento</h4>
+                        <h4 class="text-blue-600 font-semibold mb-4">Atendimento</h4>
                         <ul class="space-y-3 text-sm">
-                            <li><a href="#" class="hover:text-blue-500">Endereço (Rua + Número)</a></li>
-                            <li><a href="#" class="hover:text-blue-500">Endereço (Bairro + Cidade)</a></li>
-                            <li><a href="#" class="hover:text-blue-500">Como Chegar (Link Maps)</a></li>
-                            <li><a href="#" class="hover:text-blue-500">Telefone</a></li>
-                            <li><a href="#" class="hover:text-blue-500">Fale Conosco</a></li>
+                            <li><a class="text-blue-500 dark:text-gray-300/80">Telefone</a></li>
+                            <li><a class="text-blue-500 dark:text-gray-300/80">Endereço (Rua + Número)</a></li>
+                            <li><a class="text-blue-500 dark:text-gray-300/80">Endereço (Bairro + Cidade)</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Como Chegar (Link Maps)</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Fale Conosco</a></li>
                         </ul>
                     </div>
 
                 </div>
             </div>
         </div>
-
-        <div class="container mx-auto text-center bg-mist-900 py-4">
-            <p>
-                Desembarki Webgráfica - 00.000.000/0000-00
-            </p>
-        </div>
-
-        <script>
-            const navToggle = document.getElementById('nav-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const iconOpen = document.getElementById('icon-open');
-            const iconClose = document.getElementById('icon-close');
-
-            navToggle.addEventListener('click', () => {
-                const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-                navToggle.setAttribute('aria-expanded', String(!expanded));
-
-                // animação
-                mobileMenu.classList.toggle('opacity-0');
-                mobileMenu.classList.toggle('-translate-y-4');
-                mobileMenu.classList.toggle('pointer-events-none');
-
-                // troca ícones
-                iconOpen.classList.toggle('hidden');
-                iconClose.classList.toggle('hidden');
-            });
-        </script>
     </footer>
+
+    <div class="w-full mx-auto text-center bg-mist-200/50 dark:bg-gray-900/50 dark:text-white py-4">
+        <p>
+            Desembarki Webgráfica - 00.000.000/0000-00
+        </p>
+    </div>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+
+        navToggle.addEventListener('click', () => {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!expanded));
+
+            // animação
+            mobileMenu.classList.toggle('opacity-0');
+            mobileMenu.classList.toggle('-translate-y-4');
+            mobileMenu.classList.toggle('pointer-events-none');
+
+            // troca ícones
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        });
+    </script>
+
 
 </body>
 

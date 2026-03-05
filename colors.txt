@@ -1,0 +1,16 @@
+destaque:
+blue-600 texto de destaque
+hover:blue-500 texto de destaque secundario
+
+dark:
+gray-800 body
+gray-900 widgets
+gray-900/50 footer
+text-white texto principal
+text-gray-300/80 texto secundario
+
+light
+white body
+mist-200 widgets
+mist-200/50 footer
+text-black
