@@ -20,8 +20,7 @@
 
     <link rel="stylesheet" href="src/style.css">
     <script type="module" src="/src/dark_mode.js"></script>
-    <script type="module" src="/src/carousel.js"></script>
-    <script type="module" src="/src/services_carousel.js"></script>
+    <script type="module" src="src/products.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +33,7 @@
         style="background-image: url('/src/assets/bg.png');">
 
         <!-- Top Bar -->
-        <div class="bg-gray-800/50 py-4 hidden md:flex w-full lg:px-7">
+        <div class="bg-gray-800/50 py-4 hidden md:flex w-full">
             <div class="container mx-auto items-center justify-between md:flex">
                 <nav class="flex items-center justify-between gap-5 text-white">
                     <a class="cursor-pointer hover:text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" width="16"
@@ -184,223 +183,42 @@
                     </div>
                 </div>
             </nav>
-
-            <!-- Conteúdo Imagem -->
-            <div class="container mx-auto text-center mt-10 md:mt-20">
-                <p class="text-white text-2xl px-1 md:text-5xl">Portfólio</p>
-            </div>
         </div>
     </header>
 
 
 
     <div class="w-full">
-        <div class="container mx-auto py-20 p-2">
-            <div class="mx-auto h-50 md:h-105 justify-center items-center bg-transparent bg-cover bg-center rounded-2xl"
-                style="background-image: url('/src/assets/bg2.jpg');">
-                <div class="md:w-full md:h-full flex flex-col gap-4 p-7 md:p-20 rounded-2xl">
-                    <p class="text-white text-xl"> — Venha conhecer nosso</p>
-                    <p class="text-white text-4xl md:text-6xl font-bold">Portfólio</p>
-                    <p class="text-white text-4xl md:text-6xl font-bold">Profissional</p>
-                    <p class="hidden md:flex text-white text-lg mt-20">Confira nossos trabalhos e descubra o que podemos
-                        fazer por
-                        você!
-                    </p>
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <img id="product-img" src="https://via.placeholder.com/600x400" alt="Imagem do Produto"
+                        class="w-full h-auto rounded-lg shadow-md">
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="w-full max-w-6xl mx-auto pt-0 py-10 dark:text-white">
-
-        <!-- Carousel Wrapper -->
-        <div class="relative overflow-hidden">
-
-            <!-- Track -->
-            <div id="carousel-track" class="flex transition-transform duration-500">
-
-                <!-- ITEM -->
-                <div
-                    class="carousel-item flex-none w-full md:w-1/2 lg:w-1/5 p-6 flex flex-col items-center text-center transition duration-300 hover:scale-110 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
-                        class="bi bi-printer" viewBox="0 0 16 16">
-                        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
-                        <path
-                            d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1" />
-                    </svg>
-                    <p class="font-bold mt-5">Impressão</p>
-                </div>
-
-                <div
-                    class="carousel-item flex-none w-full md:w-1/2 lg:w-1/5 p-6 flex flex-col items-center text-center transition duration-300 hover:scale-110 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-at"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914" />
-                    </svg>
-                    <p class="font-bold mt-5">Logos Digitais</p>
-                </div>
-
-                <div
-                    class="carousel-item flex-none w-full md:w-1/2 lg:w-1/5 p-6 flex flex-col items-center text-center transition duration-300 hover:scale-110 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
-                        class="bi bi-card-text" viewBox="0 0 16 16">
-                        <path
-                            d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z" />
-                        <path
-                            d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8m0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5" />
-                    </svg>
-                    <p class="font-bold mt-5">Cartões de Visita Profissionais</p>
-                </div>
-
-                <div
-                    class="carousel-item flex-none w-full md:w-1/2 lg:w-1/5 p-6 flex flex-col items-center text-center transition duration-300 hover:scale-110 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
-                        class="bi bi-file-code" viewBox="0 0 16 16">
-                        <path
-                            d="M6.646 5.646a.5.5 0 1 1 .708.708L5.707 8l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708zm2.708 0a.5.5 0 1 0-.708.708L10.293 8 8.646 9.646a.5.5 0 0 0 .708.708l2-2a.5.5 0 0 0 0-.708z" />
-                        <path
-                            d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1" />
-                    </svg>
-                    <p class="font-bold mt-5">Cartões e Cardápios Digitais</p>
-                </div>
-
-                <div
-                    class="carousel-item flex-none w-full md:w-1/2 lg:w-1/5 p-6 flex flex-col items-center text-center transition duration-300 hover:scale-110 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
-                        class="bi bi-collection" viewBox="0 0 16 16">
-                        <path
-                            d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5z" />
-                    </svg>
-                    <p class="font-bold mt-5">Panfletos Profissionais</p>
-                </div>
-
-                <div
-                    class="carousel-item flex-none w-full md:w-1/2 lg:w-1/5 p-6 flex flex-col items-center text-center transition duration-300 hover:scale-110 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
-                        class="bi bi-collection" viewBox="0 0 16 16">
-                        <path
-                            d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5z" />
-                    </svg>
-                    <p class="font-bold mt-5">Panfletos Profissionais</p>
-                </div>
-
-                <div
-                    class="carousel-item flex-none w-full md:w-1/2 lg:w-1/5 p-6 flex flex-col items-center text-center transition duration-300 hover:scale-110 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
-                        class="bi bi-collection" viewBox="0 0 16 16">
-                        <path
-                            d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5z" />
-                    </svg>
-                    <p class="font-bold mt-5">Panfletos Profissionais</p>
-                </div>
-
-            </div>
-
-            <div class="flex justify-center gap-4 mt-6">
-                <button id="prev"
-                    class="carousel-prev p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                        viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
-                    </svg> </button>
-                <button id="next"
-                    class=" carousel-next p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                        viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                    </svg> </button>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div id="porqueescolher" class="w-full bg-mist-200 dark:bg-gray-900">
-        <div class="container mx-auto py-10 md:py-20 px-4">
-            <div class="flex flex-col md:flex-row gap-10 justify-center">
-                <div class="md:hidden w-full md:w-1/3">
-                    <img src="src/assets/montanha2.jpg" alt="Sobre Nós" class="rounded-lg shadow-lg w-full">
-                </div>
-                <div
-                    class="w-full md:w-1/2 text-black dark:text-white transition-colors transition-duration-500 text-right">
-                    <h1 class="text-3xl font-bold mb-4">Por que escolher a Desembarki Webgráfica</h1>
-                    <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse architecto tempore
-                        at? Excepturi labore error sit perferendis veritatis minima accusantium ipsam harum nemo
-                        praesentium libero ad fugiat consequuntur ut repellat dolore reprehenderit cupiditate, quae illo
-                        omnis provident quos architecto. In enim impedit dolore inventore, accusamus maxime aliquam
-                        eaque beatae consectetur quis, ea nemo sequi, cum ad suscipit deserunt voluptate porro tenetur
-                        labore distinctio atque. Asperiores magni nobis pariatur possimus quibusdam dignissimos,
-                        accusamus assumenda quidem perferendis libero obcaecati, sit unde? Accusantium?</p>
-                </div>
-                <div class="hidden md:flex w-full md:w-1/3">
-                    <img src="src/assets/montanha2.jpg" alt="Sobre Nós" class="rounded-lg shadow-lg w-full">
+                <div>
+                    <h2 id="product-title" class="text-3xl font-bold mb-4">Título do Serviço</h2>
+                    <p id="product-desc" class="text-gray-700 mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <ul class="list-disc list-inside mb-6">
+                        <li>Benefício 1 do serviço</li>
+                        <li>Benefício 2 do serviço</li>
+                        <li>Benefício 3 do serviço</li>
+                    </ul>
+                    <button href="#" class="items-center justify-center hidden md:flex cursor-pointer border-2 border-blue-600 bg-blue-600 rounded-md w-full py-2 text-white hover:text-blue-600 hover:border-2 hover:border-blue-600 hover:bg-transparent transition duration-500">Fale Conosco!</button>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <div id="carousel" class="w-full">
-        <section class="max-w-7xl mx-auto py-16">
-
-            <h2 class="text-3xl font-bold dark:text-white text-center mb-10">Conheça quem também confia em nós</h2>
-
-            <div class="relative">
-
-                <!-- VIEWPORT -->
-                <div class="overflow-hidden cursor-grab active:cursor-grabbing">
-
-                    <!-- SLIDER -->
-                    <div id="slider" class="flex transition-transform duration-500 ease-in-out">
-
-                        <!-- EACH IMAGE TAKES 1/4 WIDTH -->
-                        <div class="w-full md:w-1/2 lg:w-1/4 p-4 shrink-0">
-                            <img src="https://picsum.photos/400?1" class="rounded-lg w-full">
-                        </div>
-
-                        <div class="w-full md:w-1/2 lg:w-1/4 p-4 shrink-0">
-                            <img src="https://picsum.photos/400?2" class="rounded-lg w-full">
-                        </div>
-
-                        <div class="w-full md:w-1/2 lg:w-1/4 p-4 shrink-0">
-                            <img src="https://picsum.photos/400?3" class="rounded-lg w-full">
-                        </div>
-
-                        <div class="w-full md:w-1/2 lg:w-1/4 p-4 shrink-0">
-                            <img src="https://picsum.photos/400?4" class="rounded-lg w-full">
-                        </div>
-
-                        <div class="w-full md:w-1/2 lg:w-1/4 p-4 shrink-0">
-                            <img src="https://picsum.photos/400?5" class="rounded-lg w-full">
-                        </div>
-
-                        <div class="w-full md:w-1/2 lg:w-1/4 p-4 shrink-0">
-                            <img src="https://picsum.photos/400?6" class="rounded-lg w-full">
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div id="fale conosco" class="bg-blue-600/90">
-        <div class="container mx-auto py-10 md:py-40 text-center px-5">
-            <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Ainda está na dúvida se a Desembarki é a empresa
-                certa para sua marca?</h2>
-            <p class="text-gray-300/80 text-md md:text-lg mb-6">Entre em contato conosco hoje mesmo e descubra como
-                podemos ajudar a levar seu negócio para o próximo nível!</p>
-            <button
-                class="px-5 py-3 cursor-pointer border-2 border-white bg-transparent rounded-md text-white hover:bg-white hover:text-blue-600 transition duration-500">Fale
-                Conosco!</button>
-        </div>
-    </div>
 
     <footer class="bg-mist-900 text-white">
+        <!-- <div class="container mx-auto text-center">
+            <p>&copy;
+                <script>document.write(new Date().getFullYear())</script> Desembarki Webgráfica. Todos os direitos reservados.
+            </p>
+        </div> -->
+
         <div class="text-black dark:text-white bg-mist-200 dark:bg-gray-900 p-6 text-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 justify-center">
@@ -491,8 +309,7 @@
                         <ul class="space-y-3 text-sm">
                             <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
                             <li><a href="sobre.html" class="hover:text-blue-600">Sobre</a></li>
-                            <li><a href="servicos.html" class="hover:text-blue-600">Serviços</a>
-                            </li>
+                            <li><a href="servicos.html" class="hover:text-blue-600">Serviços</a></li>
                             <li><a href="contato.html" class="hover:text-blue-600">Contato</a></li>
                         </ul>
                     </div>
@@ -511,12 +328,9 @@
                         <h4 class="text-blue-600 font-semibold mb-4">Atendimento</h4>
                         <ul class="space-y-3 text-sm">
                             <li><a class="text-blue-500 dark:text-gray-300/80">Telefone</a></li>
-                            <li><a class="text-blue-500 dark:text-gray-300/80">Endereço (Rua +
-                                    Número)</a></li>
-                            <li><a class="text-blue-500 dark:text-gray-300/80">Endereço (Bairro +
-                                    Cidade)</a></li>
-                            <li><a href="#" class="hover:text-blue-600">Como Chegar (Link Maps)</a>
-                            </li>
+                            <li><a class="text-blue-500 dark:text-gray-300/80">Endereço (Rua + Número)</a></li>
+                            <li><a class="text-blue-500 dark:text-gray-300/80">Endereço (Bairro + Cidade)</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Como Chegar (Link Maps)</a></li>
                             <li><a href="#" class="hover:text-blue-600">Fale Conosco</a></li>
                         </ul>
                     </div>
