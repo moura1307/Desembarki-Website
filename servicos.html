@@ -22,6 +22,7 @@
     <script type="module" src="/src/dark_mode.js"></script>
     <script type="module" src="/src/carousel.js"></script>
     <script type="module" src="/src/services_carousel.js"></script>
+    <script type="module" src="src/dropdownmobile.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -149,10 +150,86 @@
                         <a href="index.html" class="hover:text-blue-600 px-3 py-2 ">Home</a>
                         <a href="sobre.html" class="hover:text-blue-600 px-3 py-2">Sobre</a>
                         <a href="servicos.html" class="hover:text-blue-600 px-3 py-2">Serviços</a>
+                        <!-- Dropdown -->
+                        <div class="relative group">
+
+                            <!-- Button -->
+                            <button class="flex items-center gap-2 px-3 py-2 hover:text-blue-600">
+
+                                Produtos
+
+                                <!-- Arrow -->
+                                <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+
+                                </svg>
+
+                            </button>
+
+                            <!-- Hover safe zone -->
+                            <div class="absolute left-0 pt-2 opacity-0 invisible 
+                    group-hover:opacity-100 group-hover:visible
+                    transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+
+                                <!-- Dropdown menu -->
+                                <ul class="w-52 bg-white text-gray-800 rounded-lg shadow-xl overflow-hidden">
+
+                                    <li>
+                                        <a href="product_page.html?id=impressoes"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Impressão
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="product_page.html?id=logos"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Logos Digitais
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="product_page.html?id=cartoes"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Cartões de Visita
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="product_page.html?id=digitais"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Cardápios Digitais
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="product_page.html?id=cartoes"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Panfletos Profissionais
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="product_page.html?id=banners"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Banners Profissionais
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
                     </div>
-                    <button href="#"
-                        class="hidden md:flex cursor-pointer border-2 border-blue-600 bg-blue-600 rounded-md px-3 py-2 text-white hover:border-2 hover:border-blue-500 hover:bg-transparent transition duration-500">Fale
-                        Conosco!</button>
+                    <a href="contato.html">
+                        <button href="contato_html"
+                            class="hidden md:flex cursor-pointer border-2 border-blue-600 bg-blue-600 rounded-md px-3 py-2 text-white hover:border-2 hover:border-blue-500 hover:bg-transparent transition duration-500">Fale
+                            Conosco!</button>
+                    </a>
 
                     <!-- Botão do Menu para Mobile -->
                     <div class="md:hidden select-none">
@@ -177,6 +254,37 @@
                             <a href="index.html" class="block px-3 py-2 rounded-md">Home</a>
                             <a href="sobre.html" class="block px-3 py-2 rounded-md">Sobre</a>
                             <a href="servicos.html" class="block px-3 py-2 rounded-md">Serviços</a>
+                            <div>
+
+                                <!-- Produtos button -->
+                                <button id="mobile-products-toggle"
+                                    class="w-full flex justify-between items-center px-3 py-2 rounded-md">
+
+                                    Produtos
+
+                                    <svg id="mobile-products-arrow" class="w-4 h-4 transition-transform duration-300"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7" />
+                                    </svg>
+
+                                </button>
+
+                                <!-- Produtos submenu -->
+                                <div id="mobile-products-menu"
+                                    class="hidden flex flex-col border-2 rounded-2xl border-blue-500 pl-4 text-sm">
+
+                                    <a href="product_page.html?id=impressoes" class="py-2">Impressão</a>
+                                    <a href="product_page.html?id=logos" class="py-2">Logos Digitais</a>
+                                    <a href="product_page.html?id=cartoes" class="py-2">Cartões de Visita</a>
+                                    <a href="product_page.html?id=digitais" class="py-2">Cardápios Digitais</a>
+                                    <a href="product_page.html?id=panfletos" class="py-2">Panfletos Profissionais</a>
+                                    <a href="product_page.html?id=banners" class="py-2">Banners Profissionais</a>
+
+                                </div>
+
+                            </div>
                             <a href="contato.html"
                                 class="block px-3 py-2 rounded-md text-white border border-white">Fale
                                 Conosco</a>
@@ -187,7 +295,7 @@
 
             <!-- Conteúdo Imagem -->
             <div class="container mx-auto text-center mt-10 md:mt-20">
-                <p class="text-white text-2xl px-1 md:text-5xl">Portfólio</p>
+                <p class="text-white text-2xl px-1 md:text-5xl">Serviços</p>
             </div>
         </div>
     </header>
@@ -220,7 +328,7 @@
             <div id="carousel-track" class="flex transition-transform duration-500">
 
                 <!-- ITEM -->
-                <div
+                <a href="product_page.html?id=impressoes"
                     class="carousel-item flex-none w-full md:w-1/2 lg:w-1/5 p-6 flex flex-col items-center text-center transition duration-300 hover:scale-110 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
                         class="bi bi-printer" viewBox="0 0 16 16">
@@ -229,9 +337,8 @@
                             d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1" />
                     </svg>
                     <p class="font-bold mt-5">Impressão</p>
-                </div>
-
-                <div
+                </a>
+                <a href="product_page.html?id=logos"
                     class="carousel-item flex-none w-full md:w-1/2 lg:w-1/5 p-6 flex flex-col items-center text-center transition duration-300 hover:scale-110 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-at"
                         viewBox="0 0 16 16">
@@ -239,9 +346,8 @@
                             d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914" />
                     </svg>
                     <p class="font-bold mt-5">Logos Digitais</p>
-                </div>
-
-                <div
+                </a>
+                <a href="product_page.html?id=cartoes"
                     class="carousel-item flex-none w-full md:w-1/2 lg:w-1/5 p-6 flex flex-col items-center text-center transition duration-300 hover:scale-110 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
                         class="bi bi-card-text" viewBox="0 0 16 16">
@@ -251,9 +357,8 @@
                             d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8m0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5" />
                     </svg>
                     <p class="font-bold mt-5">Cartões de Visita Profissionais</p>
-                </div>
-
-                <div
+                </a>
+                <a href="product_page.html?id=digitais"
                     class="carousel-item flex-none w-full md:w-1/2 lg:w-1/5 p-6 flex flex-col items-center text-center transition duration-300 hover:scale-110 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
                         class="bi bi-file-code" viewBox="0 0 16 16">
@@ -262,10 +367,9 @@
                         <path
                             d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1" />
                     </svg>
-                    <p class="font-bold mt-5">Cartões e Cardápios Digitais</p>
-                </div>
-
-                <div
+                    <p class="font-bold mt-5">Cardápios Digitais</p>
+                </a>
+                <a href="product_page.html?id=panfletos"
                     class="carousel-item flex-none w-full md:w-1/2 lg:w-1/5 p-6 flex flex-col items-center text-center transition duration-300 hover:scale-110 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
                         class="bi bi-collection" viewBox="0 0 16 16">
@@ -273,28 +377,16 @@
                             d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5z" />
                     </svg>
                     <p class="font-bold mt-5">Panfletos Profissionais</p>
-                </div>
-
-                <div
+                </a>
+                <a href="product_page.html?id=banners"
                     class="carousel-item flex-none w-full md:w-1/2 lg:w-1/5 p-6 flex flex-col items-center text-center transition duration-300 hover:scale-110 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
                         class="bi bi-collection" viewBox="0 0 16 16">
                         <path
                             d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5z" />
                     </svg>
-                    <p class="font-bold mt-5">Panfletos Profissionais</p>
-                </div>
-
-                <div
-                    class="carousel-item flex-none w-full md:w-1/2 lg:w-1/5 p-6 flex flex-col items-center text-center transition duration-300 hover:scale-110 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
-                        class="bi bi-collection" viewBox="0 0 16 16">
-                        <path
-                            d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5z" />
-                    </svg>
-                    <p class="font-bold mt-5">Panfletos Profissionais</p>
-                </div>
-
+                    <p class="font-bold mt-5">Banners Profissionais</p>
+                </a>
             </div>
 
             <div class="flex justify-center gap-4 mt-6">
@@ -394,9 +486,11 @@
                 certa para sua marca?</h2>
             <p class="text-gray-300/80 text-md md:text-lg mb-6">Entre em contato conosco hoje mesmo e descubra como
                 podemos ajudar a levar seu negócio para o próximo nível!</p>
-            <button
-                class="px-5 py-3 cursor-pointer border-2 border-white bg-transparent rounded-md text-white hover:bg-white hover:text-blue-600 transition duration-500">Fale
-                Conosco!</button>
+            <a href="contato.html">
+                <button
+                    class="px-5 py-3 cursor-pointer border-2 border-white bg-transparent rounded-md text-white hover:bg-white hover:text-blue-600 transition duration-500">Fale
+                    Conosco!</button>
+            </a>
         </div>
     </div>
 
@@ -517,7 +611,7 @@
                                     Cidade)</a></li>
                             <li><a href="#" class="hover:text-blue-600">Como Chegar (Link Maps)</a>
                             </li>
-                            <li><a href="#" class="hover:text-blue-600">Fale Conosco</a></li>
+                            <li><a href="contato.html" class="hover:text-blue-600">Fale Conosco</a></li>
                         </ul>
                     </div>
 

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="src/style.css">
     <script type="module" src="/src/dark_mode.js"></script>
     <script type="module" src="/src/carousel.js"></script>
+    <script type="module" src="src/dropdownmobile.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -145,13 +146,89 @@
 
                     <!-- Menu para Desktop -->
                     <div class="hidden md:flex text-white gap-5 absolute left-1/2 -translate-x-1/2">
-                        <a href="index.html" class="hover:text-blue-600 px-3 py-2">Home</a>
+                        <a href="index.html" class="hover:text-blue-600 px-3 py-2 ">Home</a>
                         <a href="sobre.html" class="hover:text-blue-600 px-3 py-2">Sobre</a>
                         <a href="servicos.html" class="hover:text-blue-600 px-3 py-2">Serviços</a>
+                        <!-- Dropdown -->
+                        <div class="relative group">
+
+                            <!-- Button -->
+                            <button class="flex items-center gap-2 px-3 py-2 hover:text-blue-600">
+
+                                Produtos
+
+                                <!-- Arrow -->
+                                <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+
+                                </svg>
+
+                            </button>
+
+                            <!-- Hover safe zone -->
+                            <div class="absolute left-0 pt-2 opacity-0 invisible 
+                    group-hover:opacity-100 group-hover:visible
+                    transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+
+                                <!-- Dropdown menu -->
+                                <ul class="w-52 bg-white text-gray-800 rounded-lg shadow-xl overflow-hidden">
+
+                                    <li>
+                                        <a href="product_page.html?id=impressoes"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Impressão
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="product_page.html?id=logos"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Logos Digitais
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="product_page.html?id=cartoes"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Cartões de Visita
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="product_page.html?id=digitais"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Cardápios Digitais
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="product_page.html?id=cartoes"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Panfletos Profissionais
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="product_page.html?id=banners"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Banners Profissionais
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
                     </div>
-                    <button href="#"
-                        class="hidden md:flex cursor-pointer border-2 border-blue-600 bg-blue-600 rounded-md px-3 py-2 text-white hover:border-2 hover:border-blue-600 hover:bg-transparent transition duration-500">Fale
+                    <a href="contato.html">
+                        <button href="contato_html"
+                        class="hidden md:flex cursor-pointer border-2 border-blue-600 bg-blue-600 rounded-md px-3 py-2 text-white hover:border-2 hover:border-blue-500 hover:bg-transparent transition duration-500">Fale
                         Conosco!</button>
+                    </a>
 
                     <!-- Botão do Menu para Mobile -->
                     <div class="md:hidden select-none">
@@ -176,6 +253,37 @@
                             <a href="index.html" class="block px-3 py-2 rounded-md">Home</a>
                             <a href="sobre.html" class="block px-3 py-2 rounded-md">Sobre</a>
                             <a href="servicos.html" class="block px-3 py-2 rounded-md">Serviços</a>
+                            <div>
+
+                                <!-- Produtos button -->
+                                <button id="mobile-products-toggle"
+                                    class="w-full flex justify-between items-center px-3 py-2 rounded-md">
+
+                                    Produtos
+
+                                    <svg id="mobile-products-arrow" class="w-4 h-4 transition-transform duration-300"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7" />
+                                    </svg>
+
+                                </button>
+
+                                <!-- Produtos submenu -->
+                                <div id="mobile-products-menu"
+                                    class="hidden flex flex-col border-2 rounded-2xl border-blue-500 pl-4 text-sm">
+
+                                    <a href="product_page.html?id=impressoes" class="py-2">Impressão</a>
+                                    <a href="product_page.html?id=logos" class="py-2">Logos Digitais</a>
+                                    <a href="product_page.html?id=cartoes" class="py-2">Cartões de Visita</a>
+                                    <a href="product_page.html?id=digitais" class="py-2">Cardápios Digitais</a>
+                                    <a href="product_page.html?id=panfletos" class="py-2">Panfletos Profissionais</a>
+                                    <a href="product_page.html?id=banners" class="py-2">Banners Profissionais</a>
+
+                                </div>
+
+                            </div>
                             <a href="contato.html"
                                 class="block px-3 py-2 rounded-md text-white border border-white">Fale
                                 Conosco</a>
@@ -267,7 +375,7 @@
 
     
     <!-- Carrossel -->
-    <div class="carousel timed w-full">
+    <div id="carousel" class="timed w-full">
         <section class="max-w-7xl mx-auto py-16">
 
             <h2 class="text-3xl font-bold dark:text-white text-center mb-10">Conheça Nossos Parceiros</h2>
@@ -278,7 +386,7 @@
                 <div class="overflow-hidden cursor-grab active:cursor-grabbing">
 
                     <!-- SLIDER -->
-                    <div class="slider flex transition-transform duration-500 ease-in-out">
+                    <div id="slider" class="flex transition-transform duration-500 ease-in-out">
 
                         <!-- EACH IMAGE TAKES 1/4 WIDTH -->
                         <div class="w-full md:w-1/2 lg:w-1/4 p-4 shrink-0">
@@ -367,9 +475,11 @@
             <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Pronto para transformar sua marca?</h2>
             <p class="text-gray-300/80 text-md md:text-lg mb-6">Entre em contato conosco hoje mesmo e descubra como
                 podemos ajudar a levar seu negócio para o próximo nível!</p>
-            <button
+            <a href="contato.html">
+                <button
                 class="px-5 py-3 cursor-pointer border-2 border-white bg-transparent rounded-md text-white hover:bg-white hover:text-blue-600 transition duration-500">Fale
                 Conosco!</button>
+            </a>
         </div>
     </div>
 
@@ -492,7 +602,7 @@
                             <li><a class="text-blue-500 dark:text-gray-300/80">Endereço (Rua + Número)</a></li>
                             <li><a class="text-blue-500 dark:text-gray-300/80">Endereço (Bairro + Cidade)</a></li>
                             <li><a href="#" class="hover:text-blue-600">Como Chegar (Link Maps)</a></li>
-                            <li><a href="#" class="hover:text-blue-600">Fale Conosco</a></li>
+                            <li><a href="contato.html" class="hover:text-blue-600">Fale Conosco</a></li>
                         </ul>
                     </div>
 

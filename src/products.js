@@ -7,8 +7,8 @@ const products = {
         image: 'src/assets/montanha1.jpg'
     },
     'digitais': {
-        title: 'Cartões e Cardápios Digitais',
-        description: 'Banners de alta resolução para eventos...',
+        title: 'Cardápios Digitais',
+        description: 'Cardápios Digitais de alta resolução para eventos...',
         image: 'src/assets/montanha2.jpg'
     },
     'cartoes': {
@@ -30,6 +30,11 @@ const products = {
         title: 'Banners Profissionais',
         description: 'Banners de alta resolução para eventos...',
         image: 'src/assets/montanha2.jpg'
+    },
+    'impressoes': {
+        title: 'Impressões Profissionais',
+        description: 'Impressões de alta resolução para eventos...',
+        image: 'src/assets/montanha3.jpg'
     },
     // Add the rest of your products here...
 };
