@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem("theme");
+
+            if (savedTheme === "dark") {
+                document.documentElement.classList.add("dark");
+            }
+            else if (savedTheme === "light") {
+                document.documentElement.classList.remove("dark");
+            }
+            else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+                document.documentElement.classList.add("light");
+            }
+        })();
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desembarki Webgráfica</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo-DctWz00t.svg">
+  <script type="module" crossorigin src="./assets/main-Dko4vFI5.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-CBFNI9Np.css">
+</head>
+
+<body class="bg-white dark:bg-gray-800 transition-colors duration-500">
+    <header class="bg-transparent h-50 md:h-40 bg-cover bg-center" style="background-image: url('./assets/bg-UyyAWfCf.png');">
+
+        <!-- Top Bar -->
+        <div class="bg-gray-800/50 py-4 hidden md:flex w-full">
+            <div class="container mx-auto items-center justify-between md:flex">
+                <nav class="flex items-center justify-between gap-5 text-white">
+                    <a class="cursor-pointer hover:text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                        </svg></a>
+                    <a class="cursor-pointer hover:text-pink-500"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                        </svg></a>
+                    <a class="cursor-pointer hover:text-green-500"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                            <path
+                                d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                        </svg></a>
+                </nav>
+                <nav class="flex items-center justify-between gap-6 text-white">
+                    <div class="flex items-center gap-2">
+                        <a class="mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
+                            </svg>
+                        </a>
+                        <span class="text-white">cdesembarki@gmail.com</span>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <a class="mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+                            </svg>
+                        </a>
+                        <span class="text-white">+55 (11) 99999-9999</span>
+                    </div>
+                    <button
+                        class="theme-toggle relative w-14 h-8 flex items-center bg-gray-300 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300">
+
+                        <span
+                            class="toggle-circle w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 flex items-center justify-center text-xs">
+                            🌙
+                        </span>
+
+                    </button>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="container w-full mx-auto relative">
+            <!-- h = altura do header - altura da topbar ( /!\ DESCONTE O PY /!\ ) -->
+            <nav class="p-4 relative md:bg-transparent bg-gray-800/50">
+                <div class="container mx-auto flex items-center justify-between text-lg">
+                    <a href="index.html" class="text-white text-lg font-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
+                            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                            viewBox="0 0 13804.32 3160.82" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xmlns:xodm="http://www.corel.com/coreldraw/odm/2003" class="w-auto h-16">
+                            <defs>
+                                <style type="text/css">
+                                    .fil0 {
+                                        fill: #FFF212
+                                    }
+
+                                    .fil2 {
+                                        fill: #EC268F
+                                    }
+
+                                    .fil3 {
+                                        fill: #00AFEF
+                                    }
+
+                                    .fil1 {
+                                        fill: #201E1E
+                                    }
+
+                                    .fil4 {
+                                        fill: currentColor;
+                                        fill-rule: nonzero
+                                    }
+                                </style>
+                            </defs>
+                            <g id="Camada_x0020_1">
+                                <metadata id="CorelCorpID_0Corel-Layer" />
+                                <g id="_1526380608">
+                                    <polygon class="fil0"
+                                        points="846.09,1592.63 1269.16,2376.74 1692.21,3160.82 846.09,3160.82 -0,3160.82 423.06,2376.74 " />
+                                    <polygon class="fil1"
+                                        points="1723.16,3160.82 2146.23,2376.74 2569.29,1592.63 1723.16,1592.63 877.07,1592.63 1300.13,2376.74 " />
+                                    <polygon class="fil2"
+                                        points="846.09,1568.19 1269.16,784.11 1692.21,0.01 846.09,0.01 -0,0.01 423.06,784.11 " />
+                                    <polygon class="fil3"
+                                        points="1723.16,0.01 2146.23,784.11 2569.29,1568.19 1723.16,1568.19 877.07,1568.19 1300.13,784.11 " />
+                                    <path class="fil4"
+                                        d="M3848.86 1948.91l0 -1624.76 444.89 0c96.71,0 182.98,26.31 258.8,78.92 75.42,52.22 113.34,133.07 113.34,241.76l0 983.37c0,101.36 -35.21,179.89 -105.99,236.38 -70.8,56.08 -158.62,84.33 -263.85,84.33l-447.2 0zm459.59 -295.16l0 -1035.61c0,-56.87 -34.05,-85.09 -102.12,-85.09l0 1206.97c68.07,0 102.12,-28.62 102.12,-86.26zm1264.82 295.16l-698.66 0 0 -1624.76 694.01 0 0 208.9 -336.57 0 0 438.7 303.7 0 0 197.3 -303.7 0 0 570.98 341.22 0 0 208.9zm190.93 -651.45l324.94 0 0 372.93c0,37.12 22.45,55.68 67.31,55.68 43.35,0 65,-18.56 65,-55.32l0 -192.25c0,-58.81 -39.46,-128.06 -118.01,-207.35 -152.03,-147.02 -246.41,-246.04 -283.56,-296.35 -37.12,-50.66 -55.68,-105.98 -55.68,-166.7l0 -182.23c0,-210.45 138.09,-315.67 413.91,-315.67 247.2,0 370.62,95.93 370.62,287.81l0 281.26 -324.97 0 0 -297.87c0,-32.11 -18.16,-48.36 -54.56,-48.36 -42.53,0 -63.82,30.56 -63.82,91.68l6.96 105.61c0,60.33 40.24,130.37 120.71,210.45 149.33,142.74 244.5,242.16 285.11,298.62 40.62,56.87 60.73,120.71 60.73,192.68l0 206.95c0,215.85 -138.09,323.79 -414.69,323.79 -266.55,0 -400,-98.25 -400,-294.78l0 -370.59zm1724.38 651.45l-698.66 0 0 -1624.76 694 0 0 208.9 -336.56 0 0 438.7 303.7 0 0 197.3 -303.7 0 0 570.98 341.22 0 0 208.9zm1437.36 0l-318.01 0 0 -912.2 -186.05 912.2 -246.05 0 -213.15 -912.2 0 912.2 -278.55 0 0 -1624.76 458.83 0 163.24 842.94 141.98 -842.94 477.76 0 0 1624.76zm211.04 0l0 -1624.76 420.89 0c100.58,0 188,22.81 261.88,68.47 74.29,45.65 111.42,118.75 111.42,218.96l0 225.54c0,114.12 -69.63,194.19 -208.5,241 146.63,36.36 219.74,114.49 219.74,234.81l0 315.28c0,107.17 -34.83,187.63 -104.86,240.64 -70.02,53.37 -153.58,80.07 -250.27,80.07l-450.29 0zm457.25 -1054.17l0 -276.61c0,-56.87 -33.26,-85.09 -99.81,-85.09l0 447.96c66.55,0 99.81,-28.62 99.81,-86.26zm0 759.01l0 -411.24c0,-56.86 -33.26,-85.08 -99.81,-85.08l0 582.59c66.55,0 99.81,-28.62 99.81,-86.26zm1524.75 295.16l-355.13 0 -59.97 -436.35 -157.83 0 -60.73 436.35 -355.13 0 266.16 -1624.76 456.1 0 266.52 1624.76zm-443.7 -661.5l-51.07 -485.14 -48.75 485.14 99.82 0zm1513.93 663.81l-355.52 0c-38.28,-46.02 -57.63,-176.79 -57.63,-392.24l0 -2.34 1.92 -97.48c1.94,-135.39 2.73,-204.25 2.73,-207.35 0,-55.32 -36.37,-82.77 -109.12,-82.77l0 779.87 -357.44 0 0 -1624.76 440.61 0c100.6,0 188.02,23.21 262.29,69.24 74.67,46.05 111.78,118.77 111.78,218.19l0 194.98c0,126.1 -73.48,211.21 -220.86,255.71 147.38,34.81 220.86,124.54 220.86,268.86l-4.61 177.94c0,259.96 21.66,407.34 64.98,442.16zm-408.5 -1065.75l0 -267.34c0,-56.87 -36.37,-85.09 -109.12,-85.09l0 438.7c72.75,0 109.12,-28.65 109.12,-86.26zm1485.28 1063.44l-392.24 0 -136.96 -602.33 0 602.33 -357.44 0 0 -1624.76 357.44 0 0 540.42 155.52 -540.42 331.92 0 -220.13 740.82 261.9 883.94zm538.34 0l-357.47 0 0 -1624.76 357.47 0 0 1624.76z" />
+                                    <path class="fil4"
+                                        d="M3953.32 2313.62l96.75 449.76 109.36 -449.76 106.79 0 107.76 449.76 98.35 -449.76 90.69 0 -137.52 536.98 -108.16 0 -105.73 -436.35 -110.83 436.35 -107.75 0 -132.83 -536.98 93.11 0zm1578.15 0l0 68.44 -156.45 0c-28.85,0 -51.12,2 -67.1,5.88 -15.83,4.03 -30.05,11.01 -42.53,20.93 -17.32,13.97 -30.33,31.54 -38.78,52.86 -8.45,21.35 -13.83,49.51 -15.97,84.56l320.82 0 0 68.44 -320.82 0c-0.67,38.35 7.77,73.4 25.63,104.65 13.29,23.07 30.05,39.32 50.33,48.7 20.11,9.41 48.16,14.08 84.12,14.08l160.74 0 0 68.44 -176.45 0c-45.06,0 -81.71,-5.09 -109.76,-15.29 -50.19,-18.39 -87.08,-58.39 -110.3,-120.09 -12.62,-33.01 -18.93,-73.94 -18.93,-122.63 0,-64.83 10.2,-117.28 30.62,-157.41 22.78,-44.27 51.79,-75.68 86.94,-94.07 35.01,-18.36 83.85,-27.49 146.51,-27.49l151.35 0zm610.58 536.98l0 -536.98 256.3 0c41.18,0 72.44,2.81 93.65,8.44 21.21,5.64 39.04,16.12 53.54,31.26 25.1,26.03 37.71,58.64 37.71,97.96 0,56.75 -27.51,97.81 -82.66,123.58 25.09,8.85 44.41,20.12 57.7,33.81 22,22.28 33.01,52.32 33.01,90.03 0,53.54 -19.32,93.93 -58.11,121.16 -29.12,20.54 -81.05,30.73 -156.06,30.73l-235.1 0zm85.34 -309.95l170.95 0c31.26,0 53.94,-5.37 68.02,-16.11 18.93,-14.22 28.31,-35.28 28.31,-63.45 0,-25.38 -7.49,-45.38 -22.39,-59.71 -7.91,-7.67 -16.64,-12.76 -26.58,-15.44 -9.78,-2.56 -25.49,-3.89 -47.35,-3.89l-170.95 0 0 158.59zm0 241.51l163.58 0c72.86,0 109.34,-29.77 109.34,-89.36 0,-29.52 -7.91,-50.98 -23.74,-63.99 -15.96,-13.15 -41.99,-19.71 -78.21,-19.71l-170.95 0 0 173.06zm1350.72 -239.09l251.17 0 0 307.53 -198.45 0c-53.41,0 -94.47,-4.42 -122.91,-13.4 -36.22,-11.29 -66.95,-33.15 -92.44,-65.63 -32.75,-42.27 -49.12,-104.51 -49.12,-186.93 0,-118.07 32.87,-197.23 98.64,-237.62 20.5,-12.34 43.2,-20.93 68.41,-25.89 25.1,-4.98 58.92,-7.51 101.45,-7.51l194.42 0 0 68.44 -187.72 0c-34.86,0 -59.42,1.18 -73.39,3.74 -14.08,2.43 -28.17,8.06 -42.39,16.64 -45.63,28.17 -68.44,86.67 -68.44,175.5 0,34.89 2.43,63.2 7.1,85.08 4.7,21.71 13.04,41.6 24.84,59.71 14.9,23.06 32.87,38.78 53.8,47.08 21.07,8.2 53.82,12.34 98.49,12.34l102.38 0 0 -170.68 -165.83 0 0 -68.41zm953.15 79.67l0 227.85 -85.34 0 0 -536.98 244.22 0c70.58,0 119.96,9.52 148.01,28.69 18.64,12.9 33.15,29.8 43.74,51.01 10.48,21.07 15.69,44 15.69,68.98 0,46.41 -15.01,82.49 -44.94,108.13 -16.51,13.97 -38.79,24.84 -66.67,32.61 36.22,16.12 60.9,35.04 73.94,57.18 13.12,22 21.33,58.21 24.82,108.55 2,32.72 3.74,52.47 4.82,59.03 1.21,6.59 4.31,14.08 9.26,22.81l-87.62 0c-3.07,-5.77 -5.09,-11.54 -5.89,-17.17 -0.82,-5.64 -2.7,-25.78 -5.91,-60.39 -5.24,-56.89 -20.92,-96.21 -47.09,-117.82 -26.31,-21.59 -71.39,-32.47 -135.28,-32.47l-85.73 0zm0 -68.41l153.38 0c45.49,0 75.68,-5.37 90.44,-16.11 21.07,-15.69 31.51,-39.04 31.51,-70.04 0,-35.69 -11.41,-60.53 -34.33,-74.33 -12.9,-7.91 -42.13,-11.8 -87.63,-11.8l-153.38 0 0 172.28zm916.93 296.26l222.19 -536.98 112.86 0 213.35 536.98 -91.12 0 -54.75 -140.08 -254.27 0 -57.03 140.08 -91.22 0zm277.19 -472.45l-103.05 263.92 200.88 0 -97.82 -263.92zm-36.21 -109.62l75.14 -96.61 86.01 0 -101.31 96.61 -59.85 0zm1276.53 277.77l0 68.44 -314.8 0 0 235.87 -85.33 0 0 -323.63c0,-31.26 1.46,-55.43 4.28,-72.19 2.95,-16.79 8.34,-32.9 16.11,-48.05 17.58,-34.22 43.06,-58.24 76.35,-72.18 33.26,-13.94 81.46,-20.92 144.66,-20.92l158.73 0 0 68.44 -166.25 0c-40.68,0.25 -69.79,4.42 -87.09,12.59 -21.46,9.8 -37.17,24.17 -46.83,43.21 -9.8,19.21 -14.62,44.94 -14.62,77.56l0 30.87 314.8 0zm604.13 304.31l0 -536.98 85.33 0 0 536.98 -85.33 0zm1118.05 -68.44l0 68.44 -166.65 0c-47.78,0 -85.62,-3.89 -113.65,-11.8 -55.68,-15.71 -96.88,-52.75 -123.33,-110.97 -19.18,-41.74 -28.69,-88.97 -28.69,-141.98 0,-62.66 13.01,-117.92 38.89,-165.57 21.49,-39.72 48.59,-67.35 81.34,-83.06 32.72,-15.69 79.67,-23.6 140.73,-23.6l171.36 0 0 68.44 -166.65 0c-36.5,0 -64.03,2.81 -82.67,8.44 -18.65,5.64 -34.22,16.09 -46.81,31.26 -14.11,16.76 -25.24,39.97 -33.3,69.51 -7.91,29.52 -11.93,61.85 -11.93,96.85 0,66.44 15.43,117.03 46.41,151.89 14.51,16.25 31.26,27.38 50.33,33.29 19.18,5.89 47.49,8.85 85.05,8.85l159.56 0zm555.72 68.44l222.19 -536.98 112.86 0 213.35 536.98 -91.12 0 -54.75 -140.08 -254.27 0 -57.03 140.08 -91.22 0zm277.2 -472.45l-103.06 263.92 200.88 0 -97.81 -263.92z" />
+                                    <polygon class="fil1"
+                                        points="3025.56,0.01 3076.45,0.01 3076.45,3160.82 3025.56,3160.82 " />
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+
+                    <!-- Menu para Desktop -->
+                    <div class="hidden md:flex text-white gap-5 absolute left-1/2 -translate-x-1/2">
+                        <a href="index.html" class="hover:text-blue-600 px-3 py-2 ">Home</a>
+                        <a href="sobre.html" class="hover:text-blue-600 px-3 py-2">Sobre</a>
+                        <a href="servicos.html" class="hover:text-blue-600 px-3 py-2">Serviços</a>
+                        <!-- Dropdown -->
+                        <div class="relative group">
+
+                            <!-- Button -->
+                            <button class="flex items-center gap-2 px-3 py-2 hover:text-blue-600">
+
+                                Produtos
+
+                                <!-- Arrow -->
+                                <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+
+                                </svg>
+
+                            </button>
+
+                            <!-- Hover safe zone -->
+                            <div class="absolute left-0 pt-2 opacity-0 invisible 
+                    group-hover:opacity-100 group-hover:visible
+                    transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+
+                                <!-- Dropdown menu -->
+                                <ul class="w-52 bg-white text-gray-800 rounded-lg shadow-xl overflow-hidden">
+
+                                    <li>
+                                        <a href="product_page.html?id=impressoes"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Impressão
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="product_page.html?id=logos"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Logos Digitais
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="product_page.html?id=cartoes"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Cartões de Visita
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="product_page.html?id=digitais"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Cardápios Digitais
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="product_page.html?id=panfletos"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Panfletos Profissionais
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="product_page.html?id=banners"
+                                            class="block px-4 py-3 hover:bg-blue-100 transition">
+                                            Banners Profissionais
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <a href="contato.html">
+                        <button
+                            class="hidden md:flex cursor-pointer border-2 border-blue-600 bg-blue-600 rounded-md px-3 py-2 text-white hover:border-2 hover:border-blue-500 hover:bg-transparent transition duration-500">Fale
+                            Conosco!</button>
+                    </a>
+
+                    <!-- Botão do Menu para Mobile -->
+                    <div class="md:hidden select-none">
+                        <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-white outline-none ring-2 ring-white">
+                            <svg id="icon-open" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4 8h16M4 16h16"></path>
+                            </svg>
+                            <svg id="icon-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Menu para Mobile -->
+                    <div id="mobile-menu"
+                        class="md:hidden absolute top-full left-0 w-full z-50 opacity-0 -translate-y-4 pointer-events-none transition-all duration-300 ease-in-out p-3">
+                        <div class="flex flex-col gap-2 text-white bg-blue-600 p-2 rounded-sm shadow-lg">
+                            <a href="index.html" class="block px-3 py-2 rounded-md">Home</a>
+                            <a href="sobre.html" class="block px-3 py-2 rounded-md">Sobre</a>
+                            <a href="servicos.html" class="block px-3 py-2 rounded-md">Serviços</a>
+                            <div>
+
+                                <!-- Produtos button -->
+                                <button id="mobile-products-toggle"
+                                    class="w-full flex justify-between items-center px-3 py-2 rounded-md">
+
+                                    Produtos
+
+                                    <svg id="mobile-products-arrow" class="w-4 h-4 transition-transform duration-300"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7" />
+                                    </svg>
+
+                                </button>
+
+                                <!-- Produtos submenu -->
+                                <div id="mobile-products-menu"
+                                    class="hidden flex flex-col border-2 rounded-2xl border-blue-500 pl-4 text-sm">
+
+                                    <a href="product_page.html?id=impressoes" class="py-2">Impressão</a>
+                                    <a href="product_page.html?id=logos" class="py-2">Logos Digitais</a>
+                                    <a href="product_page.html?id=cartoes" class="py-2">Cartões de Visita</a>
+                                    <a href="product_page.html?id=digitais" class="py-2">Cardápios Digitais</a>
+                                    <a href="product_page.html?id=panfletos" class="py-2">Panfletos Profissionais</a>
+                                    <a href="product_page.html?id=banners" class="py-2">Banners Profissionais</a>
+
+                                </div>
+
+                            </div>
+                            <a href="contato.html"
+                                class="block px-3 py-2 rounded-md text-white border border-white">Fale
+                                Conosco</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="w-full">
+        <div class="container mx-auto py-10 md:py-20 px-4">
+            <div class="flex flex-col md:flex-row gap-10">
+
+                <div class="w-full md:w-2/3">
+                    <img src="./assets/montanha1-D8ETnOiu.jpg" alt="Sobre Nós" class="rounded-lg shadow-lg w-full">
+                </div>
+
+                <form action="send-email.php" method="POST"
+                    class="w-full md:w-1/2 text-black dark:text-white transition-colors duration-500">
+
+                    <p class="text-4xl font-bold mb-4">Entre em contato conosco já!</p>
+
+                    <div class="py-3">
+                        <p class="text-blue-600">Primeiro nome *</p>
+                        <input name="firstName" type="text" required
+                            class="border border-blue-400 bg-gray-100 dark:bg-gray-900 dark:text-white rounded-lg w-full p-2.5"
+                            placeholder="John">
+                    </div>
+
+                    <div class="py-3">
+                        <p class="text-blue-600">Segundo nome</p>
+                        <input name="lastName" type="text"
+                            class="border border-blue-400 bg-gray-100 dark:bg-gray-900 dark:text-white rounded-lg w-full p-2.5"
+                            placeholder="Doe">
+                    </div>
+
+                    <div class="py-3">
+                        <p class="text-blue-600">Email *</p>
+                        <input name="email" type="email" required
+                            class="border border-blue-400 bg-gray-100 dark:bg-gray-900 dark:text-white rounded-lg w-full p-2.5"
+                            placeholder="johndoe@email.com">
+                    </div>
+
+                    <div class="py-3">
+                        <p class="text-blue-600">Mensagem *</p>
+                        <textarea name="message" required
+                            class="border border-blue-400 min-h-30 max-h-64 bg-gray-100 rounded-lg w-full p-2.5 dark:bg-gray-900 dark:text-white resize-none"
+                            placeholder="Sua mensagem aqui..."></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="justify-center md:flex cursor-pointer border-2 w-full border-blue-600 bg-blue-600 rounded-md px-3 py-2 text-white hover:text-blue-600 hover:border-blue-500 hover:bg-transparent transition duration-500">
+                        Enviar
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="container justify-center items-center mx-auto">
+        <hr class="my-12 h-0.5 border-t-0 bg-neutral-200 dark:bg-white/10" />
+    </div>
+
+    <div class="w-full py-5 md:py-20 center flex items-center justify-center dark:text-white">
+        <div class="container mx-auto md:p-0 p-3 lg:px-7">
+            <h2 class="text-3xl md:text-4xl font-bold dark:text-white text-center mb-10">Conheça Nossos Outros Canais de
+                Contato
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center justify-center">
+                <a href="https://www.facebook.com.br" class="border border-blue-600 rounded-lg p-6
+                flex flex-col justify-center items-center text-center hover:bg-blue-600/90 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        class="h-12 w-12 mb-5 text-blue-500 bi bi-facebook" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                    </svg>
+                    <h3 class="text-xl font-bold mb-2">Facebook</h3>
+                    <p class="dark:text-gray-300/80">Criação de logotipos, identidade visual, materiais de marketing e muito
+                        mais.</p>
+                </a>
+                <a href="https://www.instagram.com.br" class="border border-blue-600 rounded-lg p-6 
+                flex flex-col justify-center items-center text-center hover:bg-blue-600 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        class="h-12 w-12 mb-5 text-pink-500 bi bi-instagram" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                    </svg>
+                    <h3 class="text-xl font-bold mb-2">Instagram</h3>
+                    <p class="dark:text-gray-300/80">Desenvolvimento de sites responsivos, modernos e otimizados para SEO.
+                    </p>
+                </a>
+                <a href="https://www.whatsapp.com.br" class="border border-blue-600 rounded-lg p-6 
+                flex flex-col justify-center items-center text-center hover:bg-blue-600/90 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        class="h-12 w-12 mb-5 text-green-500 bi bi-whatsapp" viewBox="0 0 16 16">
+                        <path
+                            d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                    </svg>
+                    <h3 class="text-xl font-bold mb-2">Whatsapp</h3>
+                    <p class="dark:text-gray-300/80">Gerenciamento de redes sociais, criação de conteúdo e estratégias de
+                        engajamento.</p>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="bg-mist-900 text-white">
+        <!-- <div class="container mx-auto text-center">
+            <p>&copy;
+                <script>document.write(new Date().getFullYear())</script> Desembarki Webgráfica. Todos os direitos reservados.
+            </p>
+        </div> -->
+
+        <div class="text-black dark:text-white bg-mist-200 dark:bg-gray-900 p-6 text-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 justify-center">
+                    <div
+                        class="flex flex-col justify-center items-center gap-2 text-color[#201E1E] dark:text-white font-bold text-2xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
+                            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                            viewBox="0 0 13804.32 3160.82" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xmlns:xodm="http://www.corel.com/coreldraw/odm/2003" class="w-auto h-16">
+                            <defs>
+                                <style type="text/css">
+                                    .fil0 {
+                                        fill: #FFF212
+                                    }
+
+                                    .fil2 {
+                                        fill: #EC268F
+                                    }
+
+                                    .fil3 {
+                                        fill: #00AFEF
+                                    }
+
+                                    .fil1 {
+                                        fill: #201E1E
+                                    }
+
+                                    .fil4 {
+                                        fill: currentColor;
+                                        fill-rule: nonzero
+                                    }
+                                </style>
+                            </defs>
+                            <g id="Camada_x0020_1">
+                                <metadata id="CorelCorpID_0Corel-Layer" />
+                                <g id="_1526380608">
+                                    <polygon class="fil0"
+                                        points="846.09,1592.63 1269.16,2376.74 1692.21,3160.82 846.09,3160.82 -0,3160.82 423.06,2376.74 " />
+                                    <polygon class="fil1"
+                                        points="1723.16,3160.82 2146.23,2376.74 2569.29,1592.63 1723.16,1592.63 877.07,1592.63 1300.13,2376.74 " />
+                                    <polygon class="fil2"
+                                        points="846.09,1568.19 1269.16,784.11 1692.21,0.01 846.09,0.01 -0,0.01 423.06,784.11 " />
+                                    <polygon class="fil3"
+                                        points="1723.16,0.01 2146.23,784.11 2569.29,1568.19 1723.16,1568.19 877.07,1568.19 1300.13,784.11 " />
+                                    <path class="fil4"
+                                        d="M3848.86 1948.91l0 -1624.76 444.89 0c96.71,0 182.98,26.31 258.8,78.92 75.42,52.22 113.34,133.07 113.34,241.76l0 983.37c0,101.36 -35.21,179.89 -105.99,236.38 -70.8,56.08 -158.62,84.33 -263.85,84.33l-447.2 0zm459.59 -295.16l0 -1035.61c0,-56.87 -34.05,-85.09 -102.12,-85.09l0 1206.97c68.07,0 102.12,-28.62 102.12,-86.26zm1264.82 295.16l-698.66 0 0 -1624.76 694.01 0 0 208.9 -336.57 0 0 438.7 303.7 0 0 197.3 -303.7 0 0 570.98 341.22 0 0 208.9zm190.93 -651.45l324.94 0 0 372.93c0,37.12 22.45,55.68 67.31,55.68 43.35,0 65,-18.56 65,-55.32l0 -192.25c0,-58.81 -39.46,-128.06 -118.01,-207.35 -152.03,-147.02 -246.41,-246.04 -283.56,-296.35 -37.12,-50.66 -55.68,-105.98 -55.68,-166.7l0 -182.23c0,-210.45 138.09,-315.67 413.91,-315.67 247.2,0 370.62,95.93 370.62,287.81l0 281.26 -324.97 0 0 -297.87c0,-32.11 -18.16,-48.36 -54.56,-48.36 -42.53,0 -63.82,30.56 -63.82,91.68l6.96 105.61c0,60.33 40.24,130.37 120.71,210.45 149.33,142.74 244.5,242.16 285.11,298.62 40.62,56.87 60.73,120.71 60.73,192.68l0 206.95c0,215.85 -138.09,323.79 -414.69,323.79 -266.55,0 -400,-98.25 -400,-294.78l0 -370.59zm1724.38 651.45l-698.66 0 0 -1624.76 694 0 0 208.9 -336.56 0 0 438.7 303.7 0 0 197.3 -303.7 0 0 570.98 341.22 0 0 208.9zm1437.36 0l-318.01 0 0 -912.2 -186.05 912.2 -246.05 0 -213.15 -912.2 0 912.2 -278.55 0 0 -1624.76 458.83 0 163.24 842.94 141.98 -842.94 477.76 0 0 1624.76zm211.04 0l0 -1624.76 420.89 0c100.58,0 188,22.81 261.88,68.47 74.29,45.65 111.42,118.75 111.42,218.96l0 225.54c0,114.12 -69.63,194.19 -208.5,241 146.63,36.36 219.74,114.49 219.74,234.81l0 315.28c0,107.17 -34.83,187.63 -104.86,240.64 -70.02,53.37 -153.58,80.07 -250.27,80.07l-450.29 0zm457.25 -1054.17l0 -276.61c0,-56.87 -33.26,-85.09 -99.81,-85.09l0 447.96c66.55,0 99.81,-28.62 99.81,-86.26zm0 759.01l0 -411.24c0,-56.86 -33.26,-85.08 -99.81,-85.08l0 582.59c66.55,0 99.81,-28.62 99.81,-86.26zm1524.75 295.16l-355.13 0 -59.97 -436.35 -157.83 0 -60.73 436.35 -355.13 0 266.16 -1624.76 456.1 0 266.52 1624.76zm-443.7 -661.5l-51.07 -485.14 -48.75 485.14 99.82 0zm1513.93 663.81l-355.52 0c-38.28,-46.02 -57.63,-176.79 -57.63,-392.24l0 -2.34 1.92 -97.48c1.94,-135.39 2.73,-204.25 2.73,-207.35 0,-55.32 -36.37,-82.77 -109.12,-82.77l0 779.87 -357.44 0 0 -1624.76 440.61 0c100.6,0 188.02,23.21 262.29,69.24 74.67,46.05 111.78,118.77 111.78,218.19l0 194.98c0,126.1 -73.48,211.21 -220.86,255.71 147.38,34.81 220.86,124.54 220.86,268.86l-4.61 177.94c0,259.96 21.66,407.34 64.98,442.16zm-408.5 -1065.75l0 -267.34c0,-56.87 -36.37,-85.09 -109.12,-85.09l0 438.7c72.75,0 109.12,-28.65 109.12,-86.26zm1485.28 1063.44l-392.24 0 -136.96 -602.33 0 602.33 -357.44 0 0 -1624.76 357.44 0 0 540.42 155.52 -540.42 331.92 0 -220.13 740.82 261.9 883.94zm538.34 0l-357.47 0 0 -1624.76 357.47 0 0 1624.76z" />
+                                    <path class="fil4"
+                                        d="M3953.32 2313.62l96.75 449.76 109.36 -449.76 106.79 0 107.76 449.76 98.35 -449.76 90.69 0 -137.52 536.98 -108.16 0 -105.73 -436.35 -110.83 436.35 -107.75 0 -132.83 -536.98 93.11 0zm1578.15 0l0 68.44 -156.45 0c-28.85,0 -51.12,2 -67.1,5.88 -15.83,4.03 -30.05,11.01 -42.53,20.93 -17.32,13.97 -30.33,31.54 -38.78,52.86 -8.45,21.35 -13.83,49.51 -15.97,84.56l320.82 0 0 68.44 -320.82 0c-0.67,38.35 7.77,73.4 25.63,104.65 13.29,23.07 30.05,39.32 50.33,48.7 20.11,9.41 48.16,14.08 84.12,14.08l160.74 0 0 68.44 -176.45 0c-45.06,0 -81.71,-5.09 -109.76,-15.29 -50.19,-18.39 -87.08,-58.39 -110.3,-120.09 -12.62,-33.01 -18.93,-73.94 -18.93,-122.63 0,-64.83 10.2,-117.28 30.62,-157.41 22.78,-44.27 51.79,-75.68 86.94,-94.07 35.01,-18.36 83.85,-27.49 146.51,-27.49l151.35 0zm610.58 536.98l0 -536.98 256.3 0c41.18,0 72.44,2.81 93.65,8.44 21.21,5.64 39.04,16.12 53.54,31.26 25.1,26.03 37.71,58.64 37.71,97.96 0,56.75 -27.51,97.81 -82.66,123.58 25.09,8.85 44.41,20.12 57.7,33.81 22,22.28 33.01,52.32 33.01,90.03 0,53.54 -19.32,93.93 -58.11,121.16 -29.12,20.54 -81.05,30.73 -156.06,30.73l-235.1 0zm85.34 -309.95l170.95 0c31.26,0 53.94,-5.37 68.02,-16.11 18.93,-14.22 28.31,-35.28 28.31,-63.45 0,-25.38 -7.49,-45.38 -22.39,-59.71 -7.91,-7.67 -16.64,-12.76 -26.58,-15.44 -9.78,-2.56 -25.49,-3.89 -47.35,-3.89l-170.95 0 0 158.59zm0 241.51l163.58 0c72.86,0 109.34,-29.77 109.34,-89.36 0,-29.52 -7.91,-50.98 -23.74,-63.99 -15.96,-13.15 -41.99,-19.71 -78.21,-19.71l-170.95 0 0 173.06zm1350.72 -239.09l251.17 0 0 307.53 -198.45 0c-53.41,0 -94.47,-4.42 -122.91,-13.4 -36.22,-11.29 -66.95,-33.15 -92.44,-65.63 -32.75,-42.27 -49.12,-104.51 -49.12,-186.93 0,-118.07 32.87,-197.23 98.64,-237.62 20.5,-12.34 43.2,-20.93 68.41,-25.89 25.1,-4.98 58.92,-7.51 101.45,-7.51l194.42 0 0 68.44 -187.72 0c-34.86,0 -59.42,1.18 -73.39,3.74 -14.08,2.43 -28.17,8.06 -42.39,16.64 -45.63,28.17 -68.44,86.67 -68.44,175.5 0,34.89 2.43,63.2 7.1,85.08 4.7,21.71 13.04,41.6 24.84,59.71 14.9,23.06 32.87,38.78 53.8,47.08 21.07,8.2 53.82,12.34 98.49,12.34l102.38 0 0 -170.68 -165.83 0 0 -68.41zm953.15 79.67l0 227.85 -85.34 0 0 -536.98 244.22 0c70.58,0 119.96,9.52 148.01,28.69 18.64,12.9 33.15,29.8 43.74,51.01 10.48,21.07 15.69,44 15.69,68.98 0,46.41 -15.01,82.49 -44.94,108.13 -16.51,13.97 -38.79,24.84 -66.67,32.61 36.22,16.12 60.9,35.04 73.94,57.18 13.12,22 21.33,58.21 24.82,108.55 2,32.72 3.74,52.47 4.82,59.03 1.21,6.59 4.31,14.08 9.26,22.81l-87.62 0c-3.07,-5.77 -5.09,-11.54 -5.89,-17.17 -0.82,-5.64 -2.7,-25.78 -5.91,-60.39 -5.24,-56.89 -20.92,-96.21 -47.09,-117.82 -26.31,-21.59 -71.39,-32.47 -135.28,-32.47l-85.73 0zm0 -68.41l153.38 0c45.49,0 75.68,-5.37 90.44,-16.11 21.07,-15.69 31.51,-39.04 31.51,-70.04 0,-35.69 -11.41,-60.53 -34.33,-74.33 -12.9,-7.91 -42.13,-11.8 -87.63,-11.8l-153.38 0 0 172.28zm916.93 296.26l222.19 -536.98 112.86 0 213.35 536.98 -91.12 0 -54.75 -140.08 -254.27 0 -57.03 140.08 -91.22 0zm277.19 -472.45l-103.05 263.92 200.88 0 -97.82 -263.92zm-36.21 -109.62l75.14 -96.61 86.01 0 -101.31 96.61 -59.85 0zm1276.53 277.77l0 68.44 -314.8 0 0 235.87 -85.33 0 0 -323.63c0,-31.26 1.46,-55.43 4.28,-72.19 2.95,-16.79 8.34,-32.9 16.11,-48.05 17.58,-34.22 43.06,-58.24 76.35,-72.18 33.26,-13.94 81.46,-20.92 144.66,-20.92l158.73 0 0 68.44 -166.25 0c-40.68,0.25 -69.79,4.42 -87.09,12.59 -21.46,9.8 -37.17,24.17 -46.83,43.21 -9.8,19.21 -14.62,44.94 -14.62,77.56l0 30.87 314.8 0zm604.13 304.31l0 -536.98 85.33 0 0 536.98 -85.33 0zm1118.05 -68.44l0 68.44 -166.65 0c-47.78,0 -85.62,-3.89 -113.65,-11.8 -55.68,-15.71 -96.88,-52.75 -123.33,-110.97 -19.18,-41.74 -28.69,-88.97 -28.69,-141.98 0,-62.66 13.01,-117.92 38.89,-165.57 21.49,-39.72 48.59,-67.35 81.34,-83.06 32.72,-15.69 79.67,-23.6 140.73,-23.6l171.36 0 0 68.44 -166.65 0c-36.5,0 -64.03,2.81 -82.67,8.44 -18.65,5.64 -34.22,16.09 -46.81,31.26 -14.11,16.76 -25.24,39.97 -33.3,69.51 -7.91,29.52 -11.93,61.85 -11.93,96.85 0,66.44 15.43,117.03 46.41,151.89 14.51,16.25 31.26,27.38 50.33,33.29 19.18,5.89 47.49,8.85 85.05,8.85l159.56 0zm555.72 68.44l222.19 -536.98 112.86 0 213.35 536.98 -91.12 0 -54.75 -140.08 -254.27 0 -57.03 140.08 -91.22 0zm277.2 -472.45l-103.06 263.92 200.88 0 -97.81 -263.92z" />
+                                    <polygon class="fil1"
+                                        points="3025.56,0.01 3076.45,0.01 3076.45,3160.82 3025.56,3160.82 " />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <button
+                            class="theme-toggle md:hidden relative w-14 h-8 flex items-center bg-gray-300 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300 mt-6">
+                            <span
+                                class="toggle-circle w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 flex items-center justify-center text-xs">
+                                🌙
+                            </span>
+                        </button>
+
+                        <nav class="hidden md:flex justify-center gap-5 text-black dark:text-white">
+                            <a class="cursor-pointer hover:text-blue-600"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-facebook"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                                </svg></a>
+                            <a class="cursor-pointer hover:text-pink-500"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-instagram"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                                </svg></a>
+                            <a class="cursor-pointer hover:text-green-500"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-whatsapp"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                                </svg></a>
+                        </nav>
+                    </div>
+
+
+                    <div>
+                        <h4 class="text-blue-600 font-semibold mb-4">Recursos</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
+                            <li><a href="sobre.html" class="hover:text-blue-600">Sobre</a></li>
+                            <li><a href="servicos.html" class="hover:text-blue-600">Serviços</a></li>
+                            <li><a href="contato.html" class="hover:text-blue-600">Contato</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-blue-600 font-semibold mb-4">Redes Sociais</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="#" class="hover:text-blue-600">Facebook</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Instagram</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Twitter</a></li>
+                            <li><a href="#" class="hover:text-blue-600">LinkedIn</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-blue-600 font-semibold mb-4">Atendimento</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li><a class="text-blue-500 dark:text-gray-300/80">Telefone</a></li>
+                            <li><a class="text-blue-500 dark:text-gray-300/80">Endereço (Rua + Número)</a></li>
+                            <li><a class="text-blue-500 dark:text-gray-300/80">Endereço (Bairro + Cidade)</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Como Chegar (Link Maps)</a></li>
+                            <li><a href="contato.html" class="hover:text-blue-600">Fale Conosco</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="w-full mx-auto text-center bg-mist-200/50 dark:bg-gray-900/50 dark:text-white py-4">
+        <p>
+            Desembarki Webgráfica - 00.000.000/0000-00
+        </p>
+    </div>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+
+        navToggle.addEventListener('click', () => {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!expanded));
+
+            // animação
+            mobileMenu.classList.toggle('opacity-0');
+            mobileMenu.classList.toggle('-translate-y-4');
+            mobileMenu.classList.toggle('pointer-events-none');
+
+            // troca ícones
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        });
+    </script>
+
+
+</body>
+
+</html>
