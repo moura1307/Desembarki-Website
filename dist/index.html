@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+    
     <script>
         (function () {
             const savedTheme = localStorage.getItem("theme");
@@ -22,14 +23,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desembarki Webgráfica</title>
     <link rel="icon" type="image/x-icon" href="./assets/logo-DctWz00t.svg">
-  <script type="module" crossorigin src="./assets/main-Dko4vFI5.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-CBFNI9Np.css">
+    <link rel="preload" as="image" href="./assets/bg-UyyAWfCf.png">
+  <script type="module" crossorigin src="./assets/main-BPboRBbe.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-Cp-gSLks.css">
 </head>
 
 <body class="bg-white dark:bg-gray-800 transition-colors duration-500">
-    <header class="bg-transparent h-150 md:h-175 bg-cover bg-center"
-        style="background-image: url('./assets/bg-UyyAWfCf.png');">
-
+    <header class="relative h-150 md:h-175 bg-cover bg-center" style="background-image: url('./assets/bg-UyyAWfCf.png');">
+        
         <!-- Top Bar -->
         <div class="bg-gray-800/50 py-4 lg:px-7 hidden md:flex w-full">
             <div class="container mx-auto items-center justify-between md:flex">
@@ -84,11 +85,11 @@
                 </nav>
             </div>
         </div>
-        
+
         <!-- Header -->
-        <div class="container h-150 md:h-156 w-full mx-auto relative">
+        <div class="container min-h-screen w-full mx-auto relative">
             <!-- h = altura do header - altura da topbar ( /!\ DESCONTE O PY /!\ ) -->
-            <nav class="p-4 relative md:bg-transparent bg-gray-800/50">
+            <nav class="p-4 relative md:bg-transparent w-full bg-gray-800/50">
                 <div class="container mx-auto flex items-center justify-between text-lg">
                     <a href="index.html" class="text-white text-lg font-bold">
                         <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
@@ -223,8 +224,8 @@
                     </div>
                     <a href="contato.html">
                         <button href="contato_html"
-                        class="hidden md:flex cursor-pointer border-2 border-blue-600 bg-blue-600 rounded-md px-3 py-2 text-white hover:border-2 hover:border-blue-500 hover:bg-transparent transition duration-500">Fale
-                        Conosco!</button>
+                            class="hidden md:flex cursor-pointer border-2 border-blue-600 bg-blue-600 rounded-md px-3 py-2 text-white hover:border-2 hover:border-blue-500 hover:bg-transparent transition duration-500">Fale
+                            Conosco!</button>
                     </a>
 
                     <!-- Botão do Menu para Mobile -->
@@ -233,7 +234,8 @@
                             class="inline-flex items-center justify-center p-2 rounded-md text-white outline-none ring-2 ring-white">
                             <svg id="icon-open" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    d="M4 8h16M4 16h16"></path>
+                                    d="M4 8h16M4 16h16">
+                                </path>
                             </svg>
                             <svg id="icon-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
@@ -275,7 +277,8 @@
                                     <a href="product_page.html?id=logos" class="py-2">Logos Digitais</a>
                                     <a href="product_page.html?id=cartoes" class="py-2">Cartões de Visita</a>
                                     <a href="product_page.html?id=digitais" class="py-2">Cardápios Digitais</a>
-                                    <a href="product_page.html?id=panfletos" class="py-2">Panfletos Profissionais</a>
+                                    <a href="product_page.html?id=panfletos" class="py-2">Panfletos
+                                        Profissionais</a>
                                     <a href="product_page.html?id=banners" class="py-2">Banners Profissionais</a>
 
                                 </div>
@@ -298,6 +301,7 @@
                         class="mt-6 px-5 py-3 cursor-pointer border-2 border-blue-600 bg-blue-600 rounded-md text-white hover:border-2 hover:border-blue-600 hover:bg-transparent transition duration-500">Saiba
                         Mais</button></a>
             </div>
+        </div>
         </div>
     </header>
 
@@ -370,7 +374,7 @@
         </div>
     </div>
 
-    
+
     <!-- Carrossel -->
     <div id="carousel" class="timed w-full">
         <section class="max-w-7xl mx-auto py-16">
@@ -474,8 +478,8 @@
                 podemos ajudar a levar seu negócio para o próximo nível!</p>
             <a href="contato.html">
                 <button
-                class="px-5 py-3 cursor-pointer border-2 border-white bg-transparent rounded-md text-white hover:bg-white hover:text-blue-600 transition duration-500">Fale
-                Conosco!</button>
+                    class="px-5 py-3 cursor-pointer border-2 border-white bg-transparent rounded-md text-white hover:bg-white hover:text-blue-600 transition duration-500">Fale
+                    Conosco!</button>
             </a>
         </div>
     </div>
@@ -587,8 +591,7 @@
                         <ul class="space-y-3 text-sm">
                             <li><a href="#" class="hover:text-blue-600">Facebook</a></li>
                             <li><a href="#" class="hover:text-blue-600">Instagram</a></li>
-                            <li><a href="#" class="hover:text-blue-600">Twitter</a></li>
-                            <li><a href="#" class="hover:text-blue-600">LinkedIn</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Whatsapp</a></li>
                         </ul>
                     </div>
 
